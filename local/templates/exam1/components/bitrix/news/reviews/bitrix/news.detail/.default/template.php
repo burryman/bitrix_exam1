@@ -25,11 +25,13 @@ $this->setFrameMode(true);
 	<div style="clear: both;" class="review-img-wrap"><img src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="img"></div>
 </div>
 <div class="exam-review-doc">
-<p>Документы:</p>
-<?foreach ($arResult['PROPERTIES']['DOCUMENTS']['VALUE'] as $doc):?>
-	<?$arFile = CFile::GetFileArray($doc)?>
-	<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png" alt = "<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg"><a href="<?=$arFile['SRC']?>"><?echo $arFile['ORIGINAL_NAME']?></a></div>
-<?endforeach?>
+<?if($arResult['PROPERTIES']['DOCUMENTS']['VALUE']):?>
+	<p>Документы:</p>
+	<?foreach ($arResult['PROPERTIES']['DOCUMENTS']['VALUE'] as $doc):?>
+		<?$arFile = CFile::GetFileArray($doc)?>
+		<div  class="exam-review-item-doc"><img class="rew-doc-ico" src="<?=SITE_TEMPLATE_PATH?>/img/icons/pdf_ico_40.png" alt = "<?=SITE_TEMPLATE_PATH?>/img/rew/no_photo.jpg"><a href="<?=$arFile['SRC']?>"><?echo $arFile['ORIGINAL_NAME']?></a></div>
+	<?endforeach?>
+<?endif?>
 </div>
 <hr>
 
