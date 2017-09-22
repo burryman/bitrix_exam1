@@ -23,7 +23,7 @@ $this->setFrameMode(true);
 ?>
 <div class="review-block" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 	<div class="review-text">
-		<div class="review-block-title"><span class="review-block-name"><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem["NAME"]?></a></span><span class="review-block-description"><?=$arItem["DISPLAY_ACTIVE_FROM"] . ', ' .  $arItem["PROPERTIES"]['POSITION']['VALUE'] . ', ' .  $arItem["PROPERTIES"]['COMPANY']['VALUE']?></span></div>
+		<div class="review-block-title"><span class="review-block-name"><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem["NAME"]?></a></span><span class="review-block-description"><?=implode(', ', array_filter([$arResult["DISPLAY_ACTIVE_FROM"], $arResult["PROPERTIES"]['POSITION']['VALUE'], $arResult["PROPERTIES"]['COMPANY']['VALUE']]))?></span></div>
 		<div class="review-text-cont">
 			<?=$arItem["PREVIEW_TEXT"]?>
 		</div>

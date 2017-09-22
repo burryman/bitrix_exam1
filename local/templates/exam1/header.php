@@ -7,19 +7,16 @@ $dayEnd = strtotime('today 18:00');
 
 $now = time();
 
-$workTime = $now > $dayStart && $now < $dayEnd;
+$workTime = ($now > $dayStart) && ($now < $dayEnd);
 ?>
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="<?=LANGUAGE_ID?>">
 
 <head>
     <?$APPLICATION->ShowHead();?>
     <title><?$APPLICATION->ShowTitle()?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8" />
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=< ?echo LANG_CHARSET? >">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/reset.css" />
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/style.css" />
@@ -61,7 +58,7 @@ $workTime = $now > $dayStart && $now < $dayEnd;
 		"COMPONENT_TEMPLATE" => "demo",
 		"FORGOT_PASSWORD_URL" => "",
 		"PROFILE_URL" => "/login/user.php",
-		"REGISTER_URL" => "/login/register.php",
+		"REGISTER_URL" => "/login/index.php",
 		"SHOW_ERRORS" => "N"
 	),
 	false
